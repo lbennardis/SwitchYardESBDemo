@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="IPrenotazioneEsame" targetNamespace="urn:it.luigibennardis.esb.prenotazioneesami.switchyard:SWT-servizio-prenotazione-esami:1.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="urn:it.luigibennardis.esb.prenotazioneesami.switchyard:SWT-servizio-prenotazione-esami:1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:it.luigibennardis.esb.prenotazioneesami.switchyard:SWT-servizio-prenotazione-esami:1.0" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:it.luigibennardis.esb.prenotazioneesami.switchyard:SWT-servizio-prenotazione-esami:1.0">
+  <xs:complexType name="dtoEsame">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codice" type="xs:string"/>
+      <xs:element minOccurs="0" name="dataAppello" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="descrizione" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="dtoInformazioniEsame">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="esame" type="tns:dtoEsame"/>
+      <xs:element minOccurs="0" name="studente" type="tns:dtoStudente"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="dtoStudente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cognome" type="xs:string"/>
+      <xs:element minOccurs="0" name="matricola" type="xs:string"/>
+      <xs:element minOccurs="0" name="nome" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="dtoDatiPrenotazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codicePrenotazione" type="xs:string"/>
+      <xs:element minOccurs="0" name="esame" type="tns:dtoEsame"/>
+      <xs:element minOccurs="0" name="studente" type="tns:dtoStudente"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="listaEsami" type="tns:listaEsami"/>
+  <xs:complexType name="listaEsami">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="string" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="listaEsamiResponse" type="tns:listaEsamiResponse"/>
+  <xs:complexType name="listaEsamiResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="dTOEsame" type="tns:dtoEsame"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="version" type="tns:version"/>
+  <xs:complexType name="version">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:element name="versionResponse" type="tns:versionResponse"/>
+  <xs:complexType name="versionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="string" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="prenotaEsami" type="tns:prenotaEsami"/>
+  <xs:complexType name="prenotaEsami">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dTOInformazioniEsame" type="tns:dtoInformazioniEsame"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="prenotaEsamiResponse" type="tns:prenotaEsamiResponse"/>
+  <xs:complexType name="prenotaEsamiResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dTODatiPrenotazione" type="tns:dtoDatiPrenotazione"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="codiceProssimoAppello" type="tns:codiceProssimoAppello"/>
+  <xs:complexType name="codiceProssimoAppello">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:element name="codiceProssimoAppelloResponse" type="tns:codiceProssimoAppelloResponse"/>
+  <xs:complexType name="codiceProssimoAppelloResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="string" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="listaEsamiResponse">
+    <wsdl:part name="parameters" element="tns:listaEsamiResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="codiceProssimoAppelloResponse">
+    <wsdl:part name="parameters" element="tns:codiceProssimoAppelloResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="prenotaEsami">
+    <wsdl:part name="parameters" element="tns:prenotaEsami">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="prenotaEsamiResponse">
+    <wsdl:part name="parameters" element="tns:prenotaEsamiResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="versionResponse">
+    <wsdl:part name="parameters" element="tns:versionResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="version">
+    <wsdl:part name="parameters" element="tns:version">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listaEsami">
+    <wsdl:part name="parameters" element="tns:listaEsami">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="codiceProssimoAppello">
+    <wsdl:part name="parameters" element="tns:codiceProssimoAppello">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="IPrenotazioneEsamePortType">
+    <wsdl:operation name="listaEsami">
+      <wsdl:input name="listaEsami" message="tns:listaEsami">
+    </wsdl:input>
+      <wsdl:output name="listaEsamiResponse" message="tns:listaEsamiResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="version">
+      <wsdl:input name="version" message="tns:version">
+    </wsdl:input>
+      <wsdl:output name="versionResponse" message="tns:versionResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="prenotaEsami">
+      <wsdl:input name="prenotaEsami" message="tns:prenotaEsami">
+    </wsdl:input>
+      <wsdl:output name="prenotaEsamiResponse" message="tns:prenotaEsamiResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="codiceProssimoAppello">
+      <wsdl:input name="codiceProssimoAppello" message="tns:codiceProssimoAppello">
+    </wsdl:input>
+      <wsdl:output name="codiceProssimoAppelloResponse" message="tns:codiceProssimoAppelloResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IPrenotazioneEsameSoapBinding" type="tns:IPrenotazioneEsamePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="listaEsami">
+      <soap:operation soapAction="listaEsami" style="document"/>
+      <wsdl:input name="listaEsami">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="listaEsamiResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="version">
+      <soap:operation soapAction="version" style="document"/>
+      <wsdl:input name="version">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="versionResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="codiceProssimoAppello">
+      <soap:operation soapAction="codiceProssimoAppello" style="document"/>
+      <wsdl:input name="codiceProssimoAppello">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="codiceProssimoAppelloResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="prenotaEsami">
+      <soap:operation soapAction="prenotaEsami" style="document"/>
+      <wsdl:input name="prenotaEsami">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="prenotaEsamiResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IPrenotazioneEsame">
+    <wsdl:port name="IPrenotazioneEsamePort" binding="tns:IPrenotazioneEsameSoapBinding">
+      <soap:address location="http://localhost:8080/SWT-servizio-prenotazione-esami/IPrenotazioneEsame"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

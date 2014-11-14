@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="target/classes" path="src/main/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src/test/resources"/>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="lib" path="Libs/javax-inject.jar"/>
+	<classpathentry kind="lib" path="Libs/switchyard-component-bean-0.2.0.jar"/>
+	<classpathentry kind="lib" path="Libs/junit-4.11.jar"/>
+	<classpathentry kind="lib" path="Libs/switchyard-test-0.2.0.jar"/>
+	<classpathentry kind="lib" path="Libs/switchyard-component-test-mixin-smooks-0.7.0.Final.jar"/>
+	<classpathentry kind="lib" path="Libs/switchyard-component-test-mixin-cdi-0.7.0.Final.jar"/>
+	<classpathentry kind="lib" path="Libs/switchyard-config-0.2.0.jar"/>
+	<classpathentry kind="lib" path="Libs/switchyard-api-0.1.0.jar"/>
+	<classpathentry kind="lib" path="Libs/switchyard-remote-0.8.0.Final.jar"/>
+	<classpathentry kind="lib" path="Libs/switchyard-serial-0.8.0.Final.jar"/>
+	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="Libs/xmlunit-1.5.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
